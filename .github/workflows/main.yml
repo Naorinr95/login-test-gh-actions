@@ -37,11 +37,11 @@ jobs:
         continue-on-error: true
 
       - name: Upload Cypress test artifacts
-        if: failure()
-        uses: actions/upload-artifact@v3
-        with:
-          name: cypress-artifacts
-          path: upload/
+  if: failure()
+  uses: actions/upload-artifact@v4
+  with:
+    name: cypress-artifacts
+    path: upload/
 
       # Optional: Upload Mochawesome HTML reports
       # - name: Upload Mochawesome HTML reports
