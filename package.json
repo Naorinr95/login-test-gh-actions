@@ -1,15 +1,20 @@
 {
-  "name": "cypressproject",
+  "name": "cypressautomation",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
+  "test": "cypress run",
+  "posttest": "npx mochawesome-merge mochawesome-report/*.json > mochawesome.json && npx marge mochawesome.json -f report -o mochawesome-report"
+},
+  "author": "Naorin",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@4tw/cypress-drag-drop": "^2.3.0",
     "cypress": "^14.3.3"
+  },
+  "devDependencies": {
+    "cypress-file-upload": "^5.0.8",
+    "cypress-mochawesome-reporter": "^3.8.2"
   }
 }
